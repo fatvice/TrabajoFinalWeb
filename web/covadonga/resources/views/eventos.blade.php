@@ -6,7 +6,7 @@
 		body, html {
 			padding:0px;
 			margin:0px;
-			background: url('img/bg.jpg') center;
+			background: url('img/bg4.jpg') center;
 			background-size:cover;
 			background-attachment: fixed;
 			text-align:center;
