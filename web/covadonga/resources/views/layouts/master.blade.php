@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    @yield('extra-head')
     <title>Administración Covadonga</title>
 </head>
 
@@ -33,7 +34,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="{{route('admin')}}">Administración</a>
-                          </li>    
+                        </li>    
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                               Ingreso
@@ -55,6 +56,9 @@
                               <li><a class="dropdown-item" href="{{route('ver_trabajadores')}}">Trabajadores</a></li>
                               <li><a class="dropdown-item" href="{{route('ver_usuarios')}}">Usuarios</a></li>
                             </ul>
+                          <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{route('eventos')}}">Calendario eventos</a>
+                          </li>
                       </ul>
                       <span class="navbar-text">
                         <img src="{{asset('img/logo_USM.png')}}" class="img-fluid logo-usm">

@@ -12,3 +12,4 @@ Route::view("/verpagosydeudas","ver_pagos_deudas")->name("ver_pagos_deudas");
 Route::view("/verreclamosysugerencias","ver_reclamos_sugerencias")->name("ver_reclamos_sugerencias");
 Route::view("/vertrabajadores","ver_trabajadores")->name("ver_trabajadores");
 Route::view("/verausuarios","ver_usuarios")->name("ver_usuarios");
+Route::view("eventos","eventos")->name("eventos");
