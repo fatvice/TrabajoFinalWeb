@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <monthly>
 
-
 	<event>
 		<id>1</id>
 		<name>Reunión comité</name>
@@ -12,7 +11,6 @@
 		<color>#ffb128</color>
 		<url></url>
 	</event>
-
 	<event>
 		<id>2</id>
 		<name>Junta mensual con el administrador</name>
@@ -43,4 +41,5 @@
 		<color>#ffb128</color>
 		<url></url>
 	</event>
+	
 </monthly>

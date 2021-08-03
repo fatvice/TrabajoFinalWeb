@@ -22,7 +22,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="estacionamiento-txt" class="form-label">Estacionamiento</label>
-                    <input type="text" id="estacionamiento-txt" class="form-control">
+                    <input type="number" id="estacionamiento-txt" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label for="bodega-txt" class="form-label">Bodega</label>
@@ -41,7 +41,5 @@
     <script src="{{asset('js/registrar_usuario.js')}}"></script>
 <!--
     <script src="{asset('js/servicios/marcasService.js')}}"></script>
-    <script src="{asset('js/servicios/consolasService.js')}}"></script>    
-    <script src="{asset('js/registrar_consola.js')}}"></script>
 -->
 @endsection
