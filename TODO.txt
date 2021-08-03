@@ -1,4 +1,3 @@
-No crear tabla persona en las migrations
 plug in para el selector de fecha
 en las vistas de ver dejar: codigo,rut,nombre,bla bla bla
 editar la vista eventos para dejar el estilo aparte
@@ -6,38 +5,4 @@ hacer un readme para los valores codificados (turno, trabajo, etc)
 hacer la vista de administracion (para editar valores)
 el login
 validaciones de ingreso de datos por js
-
-TRABAJADOR:
-cod_trabajador tinyInteger(2) Unsigned		PK
-nombre_persona string(50)
-rut string(9)[Con DV]				rut varChar(8)[Sin DV]
-turno char(1) 
-trabajo char(1)
-contrato char(1)
-
-USUARIO:
-cod_usuario smallInteger(4) Unsigned		PK
-nombre_persona string(50)
-rut string(9)[Con DV]
-contraseña string(30)
-estacionamiento string(2)
-bodega string(2)
-moroso char(1) (si o no)
-
-INFO <=> RECLAMO/SUGERENCIA:
-cod_info bigInteger(5) Unsigned			PK
-cod_usuario smallInteger(4) Unsigned		FK
-texto text()
-tipo_info char(1)
-
-PAGO:
-cod_pago bigInteger(5) Unsigned			PK	[si laravel no soporta el tamaño de bigInteger, se usara smallInt]
-cod_usuario smallInteger(4) Unsigned		FK
-monto Integer(9)
-fecha_pago date
-
-DEUDA:
-cod_deuda bigInteger(5) Unsigned		PK	[si laravel no soporta el tamaño de bigInteger, se usara smallInt]
-cod_usuario smallInteger(4) Unsigned		FK
-monto Integer(9)
-fecha_pago date
+ver las relaciones que puede tener la tabla trabajador
