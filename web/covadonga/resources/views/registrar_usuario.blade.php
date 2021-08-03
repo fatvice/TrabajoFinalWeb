@@ -22,11 +22,26 @@
                 </div>
                 <div class="mb-3">
                     <label for="estacionamiento-txt" class="form-label">Estacionamiento</label>
-                    <input type="number" id="estacionamiento-txt" class="form-control">
+                    <input type="number" id="estacionamiento-txt" class="form-control" value=0>
                 </div>
                 <div class="mb-3">
                     <label for="bodega-txt" class="form-label">Bodega</label>
-                    <input type="text" id="bodega-txt" class="form-control">
+                    <input type="number" id="bodega-txt" class="form-control" value=0>
+                </div>
+                <div>
+                    <fieldset disabled="disabled">
+                        <div class="mb-3">
+                            <label for="moroso-rb" class="form-label">Moroso?</label>
+                            <div class="form-check">
+                                <input type="radio" name="moroso-rb" id="moroso-si-rb" class="form-check-input" value="si">
+                                <label for="moroso-si-rb" class="form-check-label">Sí</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" name="moroso-rb" checked id="moroso-no-rb" class="form-check-input" value="no">
+                                <label for="moroso-no-rb" class="form-check-label">No</label>
+                            </div>
+                        </div>
+                    </fieldset>
                 </div>
             </div>
             <div class="card-footer d-grid gap-1">
@@ -36,10 +51,7 @@
     </div>
 </div>
 @endsection
-<!--Esto define el contenido de la seccion javascript del master -->
 @section("javascript")
     <script src="{{asset('js/registrar_usuario.js')}}"></script>
-<!--
-    <script src="{asset('js/servicios/marcasService.js')}}"></script>
--->
+    <script src="{{asset('js/servicios/usuariosService.js')}}"></script>
 @endsection

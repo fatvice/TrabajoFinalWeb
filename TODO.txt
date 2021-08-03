@@ -6,3 +6,7 @@ hacer la vista de administracion (para editar valores)
 el login
 validaciones de ingreso de datos por js
 ver las relaciones que puede tener la tabla trabajador
+
+En el js verificar que los estacionamientos esten relacionados a un solo usuario
+vale decir, el usuario 1 tiene el estacionamiento 1 y nadie mas puede tenerlo 
+(exceptuando el 0 que significa que no tiene estacionamiento)
