@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <monthly>
-
 	<event>
 		<id>1</id>
 		<name>Reunión comité</name>
@@ -40,6 +39,26 @@
 		<endtime>11:00</endtime>
 		<color>#ffb128</color>
 		<url></url>
+	</event>
+	<event>
+		<id>5</id>
+		<name>Entrega trabajo web</name>
+		<startdate>2021-8-9</startdate>
+		<enddate>2021-8-9</enddate>
+		<starttime>00:00</starttime>
+		<endtime>23:59</endtime>
+		<color>#0ccf50</color>
+		<url>https://aula.usm.cl</url>
+	</event>
+	<event>
+		<id>6</id>
+		<name>NO ABRIR Y CLICKEAR ESTE EVENTO</name>
+		<startdate>2021-8-22</startdate>
+		<enddate>2021-8-28</enddate>
+		<starttime>00:00</starttime>
+		<endtime>23:59</endtime>
+		<color>#ff0000</color>
+		<url>https://www.facebook.com/sebifrost</url>
 	</event>
 	
 </monthly>
