@@ -33,7 +33,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 //RUTAS TRABAJADORES
-
+Route::get("trabajadores/get",[TrabajadoresController::class,"getTrabajadores"]);
+Route::get("trabajadores/filtrarturno",[TrabajadoresController::class,"filtrarTrabajadoresTurno"]);
+/*
+Route::get("trabajadores/filtrartrabajo",[TrabajadoresController::class,"filtrarTrabajadoresTrabajo"]);
+Route::get("trabajadores/filtrarcontrato",[TrabajadoresController::class,"filtrarTrabajadoresContrato"]);
+*/
+Route::post("trabajadores/post",[TrabajadoresController::class,"crearTrabajador"]);
+Route::post("trabajadores/eliminar",[TrabajadoresController::class,"eliminarTrabajador"]);
+Route::post("trabajadores/actualizar",[TrabajadoresController::class,"actualizarTrabajador"]);
 
 //RUTAS USUARIOS
 Route::get("usuarios/get",[UsuariosController::class,"getUsuarios"]);

@@ -7,15 +7,6 @@ use App\Models\Usuario;
 
 class UsuariosController extends Controller
 {
-    //No se si esta funcion sea necesaria
-    /*public function getEstacionamientos(){
-        $estacionamientos=array();
-        for (i=0;i<55;i++){
-            $estacionamientos[]=i;
-        }
-        return $estacionamientos;
-    }*/
-
     public function getUsuarios(){
         $usuarios = Usuario::all();
         return $usuarios;
@@ -52,12 +43,14 @@ class UsuariosController extends Controller
         $usuario->estacionamiento=$input["estacionamiento"];
         $usuario->bodega=$input["bodega"];
         $usuario->moroso=$input["moroso"];
+        $usuario->save();
+        return "ok";
     }
 
     public function filtrarUsuarios(Request $request){
         $input = $request->all();
         $filtro = $input["filtro"];
-        $usuarios=Usuarios::where("moroso", "=",$filtro)->get();
+        $usuarios=Usuario::where("moroso", "=",$filtro)->get();
         return $usuarios;
     }
 }

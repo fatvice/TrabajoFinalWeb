@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Trabajador extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+    public $table = "trabajadores";
 }

@@ -5,19 +5,8 @@ document.querySelector("#registrar-btn").addEventListener("click", async()=>{
     let pass = document.querySelector("#pass-txt").value.trim();
     let estacionamiento = +document.querySelector("#estacionamiento-txt").value.trim();
     let bodega = +document.querySelector("#bodega-txt").value.trim();
-    let moroso = document.querySelector("#moroso-no-rb").checked ? "0": "1"; //Operador ternario
-/*    
-    let usuario={};
-    rut = rut.substr(0,8)+rut.substr(9);
-    usuario.rut=rut;
-    usuario.nombre=nombre;
-    usuario.pass = pass;
-    usuario.estacionamiento = estacionamiento;
-    usuario.bodega = bodega;
-    usuario.moroso=moroso;
-    console.log(usuario);
-    Swal.fire("Usuario ingresado");
-*/
+    let moroso = document.querySelector("#moroso-no-rb").checked ? "0": "1";
+
     let errores=[];
     if(rut.length>0 && rut.length<10){
         errores.push("El rut debe tener 10 caracteres o estar vacio");

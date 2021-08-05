@@ -16,7 +16,7 @@ class CrearTablaUsuario extends Migration
         Schema::create('usuarios', function (Blueprint $table) {
             $table->smallIncrements('cod_usuario',4);
             $table->string('nombre',70);
-            $table->string('rut',9);
+            $table->string('rut',9)->nullable();
             $table->string('password',30);
             $table->string('estacionamiento',2);
             $table->string('bodega',2);

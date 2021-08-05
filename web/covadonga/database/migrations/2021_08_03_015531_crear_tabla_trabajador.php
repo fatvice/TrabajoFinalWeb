@@ -16,7 +16,7 @@ class CrearTablaTrabajador extends Migration
         Schema::create('trabajadores', function (Blueprint $table) {
             $table->tinyIncrements('cod_trabajador',2);
             $table->string('nom_persona',70);
-            $table->string('rut',9);
+            $table->string('rut',9)->nullable();
             $table->char('turno',1);
             $table->char('nom_trabajo',1);
             $table->char('tipo_contrato',1);

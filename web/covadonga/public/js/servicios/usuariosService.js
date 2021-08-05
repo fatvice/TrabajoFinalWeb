@@ -20,7 +20,7 @@ const eliminarUsuario=async(cod_usuario)=>{
     }
 };
 
-const actualizarusuario=async(cod_usuario)=>{
+const actualizarUsuario=async(cod_usuario)=>{
     try{
         let resp = await axios.post("api/usuarios/actualizar",{cod_usuario},{
             headers:{

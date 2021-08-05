@@ -10,3 +10,7 @@ ver las relaciones que puede tener la tabla trabajador
 En el js verificar que los estacionamientos esten relacionados a un solo usuario
 vale decir, el usuario 1 tiene el estacionamiento 1 y nadie mas puede tenerlo 
 (exceptuando el 0 que significa que no tiene estacionamiento)
+
+HACER LAS FUNCIONES DE ACTUALIZAR DENTRO DE USUARIOS Y TRABAJADORES
+
+VALIDAR QUE LOS RUT SEAN NUMERICOS Y NO SOLO LETRAS
