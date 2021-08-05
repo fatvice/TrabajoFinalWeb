@@ -12,6 +12,11 @@ class TrabajadoresController extends Controller
         return $trabajadores;
     }
 
+    public function getTurnos(){
+        $turnos=["Dia","Tarde","Noche"];
+        return $turnos;
+    }
+
     public function crearTrabajador(Request $request){
         $input=$request->all();
         $trabajador=new Trabajador();

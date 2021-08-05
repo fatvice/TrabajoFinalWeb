@@ -43,3 +43,8 @@ const getTrabajadores=async(filtro="todos")=>{
     }
     return resp.data;
 }
+
+const getTurnos=async()=>{
+    let resultado = await axios.get("api/trabajadores/getturnos");
+    return resultado.data;
+}

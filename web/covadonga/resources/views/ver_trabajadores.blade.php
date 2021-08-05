@@ -29,7 +29,7 @@
                     <td>Acciones</td>
                 </tr>
             </thead>
-            <tbody id="tbody-trabajadors">
+            <tbody id="tbody-trabajador">
 
             </tbody>
         </table>
@@ -38,4 +38,6 @@
 @endsection
 
 @section('javascript')
+    <script src="{{asset('js/servicios/trabajadoresService.js')}}"></script>
+    <script src="{{asset('js/ver_trabajadores.js')}}"></script>
 @endsection
