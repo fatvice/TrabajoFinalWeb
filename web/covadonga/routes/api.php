@@ -24,13 +24,22 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //RUTAS DEUDAS
-
+Route::get("deudas/get",[DeudasController::class,"getDeudas"]);
+Route::post("deudas/post",[DeudasController::class,"crearDeuda"]);
+Route::post("deudas/eliminar",[DeudasController::class,"eliminarDeuda"]);
+Route::post("deudas/actualizar",[DeudasController::class,"actualizarDeuda"]);
 
 //RUTAS PAGOS
-
+Route::get("pagos/get",[PagosController::class,"getPagos"]);
+Route::post("pagos/post",[PagosController::class,"crearPago"]);
+Route::post("pagos/eliminar",[PagosController::class,"eliminarPago"]),
+Route::post("pagos/actualizar",[PagoController::class,"actualizarPago"]);
 
 //RUTAS RECLAMOS Y SUGERENCIAS
-
+Route::get("reclamosSugerencias/get",[ReclamosSugerenciasController::class,"getReclamosSugerencias"]);
+Route::post("reclamosSugerencias/post",[ReclamosSugerenciasController::class,"crearReclamoSugerencia"]);
+Route::post("reclamosSugerencias/eliminar",[ReclamosSugerenciasController::class,"eliminarReclamoSugerencia"]);
+Route::post("reclamosSugerencias/actualizar",[ReclamosSugerenciasController::class,"actualizarReclamoSugerencia"]);
 
 //RUTAS TRABAJADORES
 Route::get("trabajadores/get",[TrabajadoresController::class,"getTrabajadores"]);

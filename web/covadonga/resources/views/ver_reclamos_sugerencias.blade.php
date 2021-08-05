@@ -36,4 +36,5 @@
 @endsection
 
 @section('javascript')
+<script src="{{asset('js/servicios/reclamosSugerenciasService.js')}}"></script>
 @endsection
