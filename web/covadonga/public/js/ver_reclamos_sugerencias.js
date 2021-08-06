@@ -50,6 +50,11 @@ const cargarTabla = (reclamosSugerencias)=>{
         tbody.appendChild(tr);
     }
 };
+document.querySelector("#filtro-cbx").addEventListener("change", async ()=>{
+    let filtro = document.querySelector("#filtro-cbx").value;
+    let reclamosSugerencias = await getReclamosSugerencias(filtro);
+    cargarTabla(reclamosSugerencias);
+});
 document.addEventListener("DOMContentLoaded", async ()=>{
     let reclamosSugerencias = await getReclamosSugerencias();
     cargarTabla(reclamosSugerencias);

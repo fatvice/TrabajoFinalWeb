@@ -9,6 +9,7 @@
             </div>
             <div class="card-body">
                 <select class="form-select" id="filtro-cbx">
+                    <option value="deudas">Deudas</option>
                     <option value="pagos">Pagos</option>
                 </select>
             </div>
@@ -21,7 +22,7 @@
         <table class="table table-hover table bordered table-striped table-responsive">
             <thead class="bg-info">
                 <tr>
-                    <td>Rut</td>
+                    <td>Código usuario</td>
                     <td>Nombre</td>
                     <td>Monto</td>
                     <td>Fecha</td>
@@ -37,4 +38,7 @@
 @endsection
 
 @section('javascript')
+    <script src="{{asset('js/servicios/pagosService.js')}}"></script>
+    <script src="{{asset('js/servicios/deudasService.js')}}"></script>
+    <script src="{{asset('js/ver_pagos_deudas.js')}}"></script>
 @endsection
