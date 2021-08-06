@@ -37,6 +37,7 @@ Route::post("pagos/actualizar",[PagoController::class,"actualizarPago"]);
 
 //RUTAS RECLAMOS Y SUGERENCIAS
 Route::get("reclamosSugerencias/get",[ReclamosSugerenciasController::class,"getReclamosSugerencias"]);
+Route::get("reclamosSugerencias/get", [ReclamosSugerenciasController::class,"filtrarReclamosSugerencias"]);
 Route::post("reclamosSugerencias/post",[ReclamosSugerenciasController::class,"crearReclamoSugerencia"]);
 Route::post("reclamosSugerencias/eliminar",[ReclamosSugerenciasController::class,"eliminarReclamoSugerencia"]);
 Route::post("reclamosSugerencias/actualizar",[ReclamosSugerenciasController::class,"actualizarReclamoSugerencia"]);

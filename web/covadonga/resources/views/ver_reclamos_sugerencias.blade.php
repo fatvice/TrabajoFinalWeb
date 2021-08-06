@@ -9,7 +9,7 @@
             </div>
             <div class="card-body">
                 <select class="form-select" id="filtro-cbx">
-                    <option value="reclamos">Reclamos</option>
+                    <option value="reclamos">Todos</option>
                 </select>
             </div>
         </div>
@@ -21,7 +21,7 @@
         <table class="table table-hover table bordered table-striped table-responsive">
             <thead class="bg-info">
                 <tr>
-                    <td>Rut</td>
+                    <td>Código usuario</td>
                     <td>Nombre</td>
                     <td>Texto</td>
                     <td>Acciones</td>
@@ -37,4 +37,6 @@
 
 @section('javascript')
 <script src="{{asset('js/servicios/reclamosSugerenciasService.js')}}"></script>
+<script src="{{asset('js/ver_reclamos_sugerencias.js')}}"></script>
+
 @endsection

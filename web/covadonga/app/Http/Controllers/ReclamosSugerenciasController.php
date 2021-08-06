@@ -41,4 +41,10 @@ class ReclamosSugerenciasController extends Controller
         $reclamoSugerencia->tipo_info = $tipo_info;
         $reclamoSugerencia->cod_usuario = $cod_usuario;
     }
+    public function filtrarReclamosSugerencias(Request $request){
+        $input = $request->all();
+        $filtro = $input["filtro"];
+        $reclamosSugerencias = ReclamoSugerencia::where("tipo_info","=" $filtro)->get();
+        return $reclamosSugerencias;
+    }
 }

@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 const cargarTurnos = async()=>{
     let filtroCbx = document.querySelector("#filtro-cbx");
     let turnos = await getTurnos();
