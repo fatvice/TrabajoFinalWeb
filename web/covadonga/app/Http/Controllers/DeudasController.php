@@ -7,6 +7,12 @@ use App\Models\Deuda;
 class DeudasController extends Controller
 {
     //
+    public function getDeudasByUsuario(Request $request){
+        $input = $request->all();
+        $cod_usuario=$input["cod_usuario"];
+        $usuario = Usuario::findOrFail($cod_usuario);
+        return $usuario->deudas()->get();
+    }
     public function getDeudas(){
         return Deuda::all();
     }
@@ -39,5 +45,13 @@ class DeudasController extends Controller
         $deuda->monto = $monto;
         $deuda->fecha_deuda = $fecha_deuda;
         $deuda->cod_usuario = $cod_usuario;
+        $deuda->save();
+        return "ok";
+    }
+    public function obtenerPorCodDeuda(Request $request){
+        $input = $request->all();
+        $cod_deuda = $input["cod_deuda"];
+        $deuda = Deuda::findOrFail($cod_deuda);
+        return $deuda;
     }
 }

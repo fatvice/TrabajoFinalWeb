@@ -33,6 +33,24 @@
         </table>
     </div>
 </div>
+<div class="row mt-5 mb-5">
+    <div class="col-12 col-md-6 col-lg-5 mx-auto">
+        <div class="card">
+            <div class="card-header bg-warning text-white">
+                <span>Actualizar reclamo/sugerencia</span>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label for="texto-txt" class="form-label">Texto</label>
+                    <textarea id="texto-txt" class="form-control" disabled></textarea>
+                </div>
+            </div>
+            <div class="card-footer d-grid gap-1">
+                <button id="actualizar-btn" class="btn btn-info">Actualizar</button>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 @section('javascript')

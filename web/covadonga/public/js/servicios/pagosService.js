@@ -34,3 +34,7 @@ const getPagos = async()=>{
     let resp = await axios.get("api/pagos/get");
     return resp.data;
 }
+const obtenerPorCodPago = async (cod_pago)=>{
+    let resp = await axios.get(`api/pagos/findByCodPago?cod_pago=${cod_pago}`);
+    return resp.data;
+}

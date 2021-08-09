@@ -25,19 +25,25 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //RUTAS DEUDAS
 Route::get("deudas/get",[DeudasController::class,"getDeudas"]);
+Route::get("deudas/getByUsuario",[DeudasController::class,"getDeudasByUsuario"]);
+Route::get("deudas/findByCodDeuda",[DeudasController::class,"obtenerPorCodDeuda"]);
 Route::post("deudas/post",[DeudasController::class,"crearDeuda"]);
 Route::post("deudas/eliminar",[DeudasController::class,"eliminarDeuda"]);
 Route::post("deudas/actualizar",[DeudasController::class,"actualizarDeuda"]);
 
 //RUTAS PAGOS
 Route::get("pagos/get",[PagosController::class,"getPagos"]);
+Route::get("pagos/getByUsuario",[PagosController::class,"getPagosByUsuario"]);
+Route::get("pagos/findByCodPago",[PagosController::class,"obtenerPorCodPago"]);
 Route::post("pagos/post",[PagosController::class,"crearPago"]);
-Route::post("pagos/eliminar",[PagosController::class,"eliminarPago"]),
+Route::post("pagos/eliminar",[PagosController::class,"eliminarPago"]);
 Route::post("pagos/actualizar",[PagoController::class,"actualizarPago"]);
 
 //RUTAS RECLAMOS Y SUGERENCIAS
 Route::get("reclamosSugerencias/get",[ReclamosSugerenciasController::class,"getReclamosSugerencias"]);
-Route::get("reclamosSugerencias/get", [ReclamosSugerenciasController::class,"filtrarReclamosSugerencias"]);
+Route::get("reclamosSugerencias/getByUsuario",[ReclamosSugerenciasController::class,"getReclamosSugerenciasByUsuario"]);
+Route::get("reclamosSugerencias/filtrar", [ReclamosSugerenciasController::class,"filtrarReclamosSugerencias"]);
+Route::get("reclamosSugerencias/findByCodReclamoSugerencia",[ReclamosSugerencias::class,"obtenerPorCodReclamoSugerencia"]);
 Route::post("reclamosSugerencias/post",[ReclamosSugerenciasController::class,"crearReclamoSugerencia"]);
 Route::post("reclamosSugerencias/eliminar",[ReclamosSugerenciasController::class,"eliminarReclamoSugerencia"]);
 Route::post("reclamosSugerencias/actualizar",[ReclamosSugerenciasController::class,"actualizarReclamoSugerencia"]);
@@ -46,6 +52,7 @@ Route::post("reclamosSugerencias/actualizar",[ReclamosSugerenciasController::cla
 Route::get("trabajadores/get",[TrabajadoresController::class,"getTrabajadores"]);
 Route::get("trabajadores/filtrarturno",[TrabajadoresController::class,"filtrarTrabajadoresTurno"]);
 Route::get("trabajadores/getturnos",[TrabajadoresController::class,"getTurnos"]);
+Route::get("trabajadores/findByCodTrabajador",[TrabajadoresController::class,"obtenerPorCodTrabajador"]);
 /*
 Route::get("trabajadores/filtrartrabajo",[TrabajadoresController::class,"filtrarTrabajadoresTrabajo"]);
 Route::get("trabajadores/filtrarcontrato",[TrabajadoresController::class,"filtrarTrabajadoresContrato"]);
@@ -57,6 +64,7 @@ Route::post("trabajadores/actualizar",[TrabajadoresController::class,"actualizar
 //RUTAS USUARIOS
 Route::get("usuarios/get",[UsuariosController::class,"getUsuarios"]);
 Route::get("usuarios/filtrar",[UsuariosController::class,"filtrarUsuarios"]);
+Route::get("usuarios/findByCodUsuario",[UsuariosController::class,"obtenerPorCodUsuario"]);
 Route::post("usuarios/post",[UsuariosController::class,"crearusuario"]);
 Route::post("usuarios/eliminar",[UsuariosController::class,"eliminarUsuario"]);
 Route::post("usuarios/actualizar",[UsuariosController::class,"actualizarUsuario"]);

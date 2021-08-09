@@ -47,4 +47,10 @@ class ReclamosSugerenciasController extends Controller
         $reclamosSugerencias = ReclamoSugerencia::where("tipo_info","=" $filtro)->get();
         return $reclamosSugerencias;
     }
+    public function obtenerPorCodReclamoSugerencia(Request $request){
+        $input = $request->all();
+        $cod_info = $input["cod_info"];
+        $reclamoSugerencia = ReclamoSugerencia::findOrFail($cod_info);
+        return $reclamoSugerencia;
+    }
 }

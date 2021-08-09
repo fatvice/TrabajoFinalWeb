@@ -9,6 +9,14 @@ const cargarTipos = ()=>{
     filtroCbx.appendChild(option1);
     filtroCbx.appendChild(option2);
 };
+const actualizar = async function(){
+    let cod_info = this.cod_info;
+    let reclamoSugerencia = await obtenerPorCodReclamoSugerencia(cod_info);
+    reclamoSugerencia.texto = document.querySelector("#texto-txt").value.trim();
+    await actualizarReclamoSugerencia(reclamoSugerencia);
+    await Swal.fire("Texto actualizado, se recargará la página");
+    window.location.href="verreclamossugerencias";
+}
 const iniciarEliminacion = async function(){
     let cod_info = this.cod_info;
     let resp = await Swal.fire({title:"¿Seguro?", text:"Esta operación es irreversible", icon:"error", showCancelButton:true});
@@ -25,15 +33,25 @@ const iniciarEliminacion = async function(){
         Swal.fire("Cancelado", "Se ha cancelado la petición de eliminación", "info");
     }
 };
-const cargarTabla = (reclamosSugerencias)=>{
+const iniciarActualizacion = async function(){
+    let cod_info = this.cod_info;
+    let reclamoSugerencia = await obtenerPorCodReclamoSugerencia(cod_info);
+    let ingresoTexto = document.querySelector("#texto-txt").value = reclamoSugerencia.texto;
+    let botonAct = document.querySelector("#actualizar-btn");
+    botonAct.cod_info = cod_info;
+    botonAct.addEventListener("click", actualizar);
+}
+
+const cargarTabla = (reclamosSugerencias, usuarios)=>{
     let tbody = document.querySelector("#tbody-reclamo-sugerencia");
     tbody.innerHTML = "";
     for(let i=0; i < reclamosSugerencias.length; ++i){
         let tr = document.createElement("tr");
         let tdCod = document.createElement("td");
         tdCod.innerText = reclamosSugerencias[i].cod_usuario;
-        //let tdNombre = document.createElement("td");
-        //tdNombre.innerText = reclamosSugerencias[i].;
+        let nombre = usuarios[i];
+        let tdNombre = document.createElement("td");
+        tdNombre.innerText = nombre;
         let tdTexto = document.createElement("td");
         tdTexto.innerText = reclamosSugerencias[i].texto;
         let tdAcciones = document.createElement("td");
@@ -43,8 +61,14 @@ const cargarTabla = (reclamosSugerencias)=>{
         botonEliminar.cod_info = reclamosSugerencias[i].cod_info;
         botonEliminar.addEventListener("click", iniciarEliminacion);
         tdAcciones.appendChild(botonEliminar);
+        let botonActualizar = document.createElement("button");
+        botonActualizar.innerText = "Actualizar";
+        botonActualizar.classList.add("btn","btn-info");
+        botonActualizar.cod_info = reclamosSugerencias[i].cod_info;
+        botonActualizar.addEventListener("click", iniciarActualizacion);
+        tdAcciones.appendChild(botonActualizar);
         tr.appendChild(tdCod);
-        //tr.appendChild(tdNombre);
+        tr.appendChild(tdNombre);
         tr.appendChild(tdTexto);
         tr.appendChild(tdAcciones);
         tbody.appendChild(tr);
@@ -57,5 +81,12 @@ document.querySelector("#filtro-cbx").addEventListener("change", async ()=>{
 });
 document.addEventListener("DOMContentLoaded", async ()=>{
     let reclamosSugerencias = await getReclamosSugerencias();
-    cargarTabla(reclamosSugerencias);
+    let usuarios = [];
+    for(let i =0;i<reclamosSugerencias.length;i++){
+        let usuario = await obtenerPorCodUsuario(reclamosSugerencias[i].cod_usuario);
+        let nombre = usuario.nombre;
+        usuarios.push(nombre);
+    }
+
+    cargarTabla(reclamosSugerencias, usuarios);
 });

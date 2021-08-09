@@ -34,3 +34,7 @@ const getDeudas = async()=>{
     let resp = await axios.get("api/deudas/get");
     return resp.data;
 }
+const obtenerPorCodDeuda = async (cod_deuda)=>{
+    let resp = await axios.get(`api/deudas/findByCodDeuda?cod_deuda=${cod_deuda}`);
+    return resp.data;
+}

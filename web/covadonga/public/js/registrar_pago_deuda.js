@@ -1,4 +1,18 @@
 //Ingreso de datos de la información
+const cargarUsuarios=async()=>{
+    let usuarios = await getUsuarios();
+    let usuariosSelect = document.querySelector("#usuario-select");
+    usuarios.forEach(u=>{
+        let option = document.createElement("option");
+        option.value = u.cod_usuario;
+        option.innerText = u.nombre;
+        usuariosSelect.appendChild(option);
+    });
+};
+document.addEventListener("DOMContentLoaded",()=>{
+    cargarUsuarios();
+});
+
 document.querySelector("#registrar-btn").addEventListener("click", async()=>{
     let usuario = document.querySelector("#usuario-select").value.trim();
     let tipoInfo = document.querySelector("#opcion-select").value.trim();
@@ -15,14 +29,14 @@ document.querySelector("#registrar-btn").addEventListener("click", async()=>{
 
     if(errores.length == 0){
         let info={};
-        info.usuario=usuario;
-        info.tipoInfo=tipoInfo;
+        info.cod_usuario=usuario;
         info.monto=monto;
-        info.fecha=fecha;
         if(tipoInfo=="1"){
+            info.fecha_pago=fecha;
             let resultado = await crearPago(info);
             Swal.fire("Pago registrado");
         }else{
+            info.fecha_deuda=fecha;
             let resultado = await crearDeuda(info);
             Swal.fire("Deuda registrada");
         }
