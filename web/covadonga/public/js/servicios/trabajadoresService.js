@@ -48,3 +48,7 @@ const getTurnos=async()=>{
     let resultado = await axios.get("api/trabajadores/getturnos");
     return resultado.data;
 }
+const obtenerPorCodTrabajador = async (cod_trabajador)=>{
+    let resp = await axios.get(`api/trabajadores/findByCodTrabajador?cod_trabajador=${cod_trabajador}`);
+    return resp.data;
+}

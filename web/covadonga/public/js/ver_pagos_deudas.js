@@ -5,7 +5,7 @@ const actualizarDeuda = async function(){
     deuda.fecha_deuda = document.querySelector("#fecha-txt").value;
     await actualizarDeuda(deuda);
     await Swal.fire("Deuda actualizada, se recargará la página");
-    window.location.href="verpagosdeudas";
+    window.location.href="verpagosydeudas";
 }
 const actualizarPago = async function(){
     let cod_pago = this.cod_pago;

@@ -53,4 +53,10 @@ class UsuariosController extends Controller
         $usuarios=Usuario::where("moroso", "=",$filtro)->get();
         return $usuarios;
     }
+    public function obtenerPorCodUsuario(Request $request){
+        $input = $request->all();
+        $cod_usuario = $input["cod_usuario"];
+        $usuario = Usuario::findOrFail($cod_usuario); 
+        return $usuario;
+    }
 }

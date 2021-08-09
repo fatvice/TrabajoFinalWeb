@@ -11,9 +11,6 @@
                 <div class="mb-3">
                     <label for="usuario-select" class="form-label">Seleccionar usuario</label>
                     <select class="form-select" id="usuario-select">
-                        <option value="1">Familia Gonzalez</option>
-                        <option value="2">Familia Perez</option>
-                        <option value="3">Familia Ludvic</option>
                     </select>
                 </div>
                 <div class="mb-3">
@@ -38,4 +35,6 @@
 <!--Esto define el contenido de la seccion javascript del master -->
 @section("javascript")
     <script src="{{asset('js/registrar_reclamo_sugerencia.js')}}"></script>
+    <script src="{{asset('js/servicios/reclamosSugerenciasService.js')}}"></script>
+    <script src="{{asset('js/servicios/usuariosService.js')}}"></script>
 @endsection

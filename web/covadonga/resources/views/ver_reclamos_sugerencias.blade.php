@@ -56,4 +56,5 @@
 @section('javascript')
     <script src="{{asset('js/servicios/reclamosSugerenciasService.js')}}"></script>
     <script src="{{asset('js/ver_reclamos_sugerencias.js')}}"></script>
+    <script src="{{asset('js/servicios/usuariosService.js')}}"></script>
 @endsection

@@ -10,4 +10,5 @@ class Trabajador extends Model
     use HasFactory;
     public $timestamps = false;
     public $table = "trabajadores";
+    protected $primaryKey = 'cod_trabajador';
 }

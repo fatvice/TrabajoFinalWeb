@@ -56,6 +56,12 @@ class TrabajadoresController extends Controller
         $trabajadores=Trabajador::where("turno", "=",$filtro)->get();
         return $trabajadores;
     }
+    public function obtenerPorCodTrabajador(Request $request){
+        $input = $request->all();
+        $cod_trabajador = $input["cod_trabajador"];
+        $trabajador = Trabajador::findOrFail($cod_trabajador); 
+        return $trabajador;
+    }
 /*
     public function filtrarTrabajadoresTrabajo(Request $request){
         $input = $request->all();

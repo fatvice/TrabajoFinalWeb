@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ReclamoSugerencia;
+use App\Models\Usuario;
 
 class ReclamosSugerenciasController extends Controller
 {
     //
+    public function getReclamosSugerenciasByUsuario(Request $request){
+        $input = $request->all();
+        $cod_usuario=$input["cod_usuario"];
+        $usuario = Usuario::findOrFail($cod_usuario);
+        return $usuario->reclamosSugerencias()->get();
+    }
     public function getReclamosSugerencias(){
         return ReclamoSugerencia::all();
     }
@@ -44,7 +51,7 @@ class ReclamosSugerenciasController extends Controller
     public function filtrarReclamosSugerencias(Request $request){
         $input = $request->all();
         $filtro = $input["filtro"];
-        $reclamosSugerencias = ReclamoSugerencia::where("tipo_info","=" $filtro)->get();
+        $reclamosSugerencias = ReclamoSugerencia::where("tipo_info","=", $filtro)->get();
         return $reclamosSugerencias;
     }
     public function obtenerPorCodReclamoSugerencia(Request $request){

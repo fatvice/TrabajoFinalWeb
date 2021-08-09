@@ -30,7 +30,7 @@ const actualizarReclamoSugerencia = async(cod_info)=>{
         return false;
     }
 };
-const getReclamosSugerencias = async()=>{
+const getReclamosSugerencias = async(filtro="todos")=>{
     let resp;
     if (filtro=="todos"){
         resp=await axios.get("api/reclamosSugerencias/get");

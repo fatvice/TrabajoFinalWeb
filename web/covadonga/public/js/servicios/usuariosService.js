@@ -42,3 +42,7 @@ const getUsuarios=async(filtro="todos")=>{
     }
     return resp.data;
 }
+const obtenerPorCodUsuario = async (cod_usuario)=>{
+    let resp = await axios.get(`api/usuarios/findByCodUsuario?cod_usuario=${cod_usuario}`);
+    return resp.data;
+}

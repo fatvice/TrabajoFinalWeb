@@ -15,7 +15,7 @@ const actualizar = async function(){
     reclamoSugerencia.texto = document.querySelector("#texto-txt").value.trim();
     await actualizarReclamoSugerencia(reclamoSugerencia);
     await Swal.fire("Texto actualizado, se recargará la página");
-    window.location.href="verreclamossugerencias";
+    window.location.href="verreclamosysugerencias";
 }
 const iniciarEliminacion = async function(){
     let cod_info = this.cod_info;

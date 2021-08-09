@@ -9,7 +9,7 @@
             </div>
             <div class="card-body">
                 <div class="mb-3">
-                    <label for="rut-txt" class="form-label">Rut con guión</label>
+                    <label for="rut-txt" class="form-label">Rut</label>
                     <input type="text" id="rut-txt" class="form-control">
                 </div>
                 <div class="mb-3">

@@ -63,4 +63,5 @@
     <script src="{{asset('js/servicios/pagosService.js')}}"></script>
     <script src="{{asset('js/servicios/deudasService.js')}}"></script>
     <script src="{{asset('js/ver_pagos_deudas.js')}}"></script>
+    <script src="{{asset('js/servicios/usuariosService.js')}}"></script>
 @endsection
